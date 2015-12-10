@@ -8,7 +8,7 @@ HW44 -- This or That
 
 
 
-public class Hexadecimal {
+public class Hexadecimal implements Comparable{
 
     private int _decNum;
     private String _hexNum;
