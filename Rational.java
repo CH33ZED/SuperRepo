@@ -88,12 +88,22 @@ public class Rational implements Comparable{
     /* by multiplying the num and den of one factor by the den/gcd of 
        the other we are essentially finding the lcm of both denominators */
 
-    public int compareTo(Rational og) {
+    public int compareTo(Object og) {
+      try{
 	this.reduce();
 	og.reduce();
 	if (this.num==og.num&& this.den == ((Rational)og).den) return 0;
 	if (this.num > og.num && this.den< ((Rational)og).den )  return 1;
 	return -1;
+      }
+      catch(Exception e){
+      	if(!(other instanceof Rational)){
+      	    throw new classCastException("\n Wrong class type! input not a Rational")
+        }
+      	if(other == null){
+            throw new NullPointerException("\n No input detected.")
+      	}
+      }
     }
     
     /*
