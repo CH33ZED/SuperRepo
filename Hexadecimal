@@ -119,6 +119,7 @@ public class Hexadecimal {
       negative integer if this<input, positive integer otherwise
       =============================================*/
     public int compareTo( Object other ) {
+      try{
         if (this._decNum < ((Hexadecimal)other)._decNum){
 	    return -1;
         }
@@ -126,6 +127,15 @@ public class Hexadecimal {
 	    return 0;
         }
         return 1;
+      }
+      catch(Exception e){
+      	if(!(other instanceof Binary)){
+      	    throw new classCastException("\n Wrong class type! input not a Binary")
+        }
+      	if(other == null){
+            throw new NullPointerException("\n No input detected.")
+      	}
+      }
 	/****** YOUR IMPLEMENTATION HURRR ******/   
     }
    
