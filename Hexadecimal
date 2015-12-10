@@ -129,8 +129,8 @@ public class Hexadecimal {
         return 1;
       }
       catch(Exception e){
-      	if(!(other instanceof Binary)){
-      	    throw new classCastException("\n Wrong class type! input not a Binary")
+      	if(!(other instanceof Hexadecimal)){
+      	    throw new classCastException("\n Wrong class type! input not a Hexadecimal")
         }
       	if(other == null){
             throw new NullPointerException("\n No input detected.")
