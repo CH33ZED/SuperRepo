@@ -19,7 +19,10 @@ public class Hexadecimal implements Comparable{
         _hexNum = "0";
 	/****** YOUR IMPLEMENTATION HURRR ******/   
     }
-
+    
+    public int getNum(){
+    	return _decNum;
+    }
 
     /*=====================================
       overloaded constructor
