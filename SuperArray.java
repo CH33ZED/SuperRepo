@@ -101,7 +101,32 @@ public class SuperArray implements ListInt {
     //return number of meaningful items in _data
     public int size() { 
 	return _size;}
-
+    
+    public int linSearch(Comparable b){
+    	for (int a = 0; a < this.length; a++){
+             if (this._data[a] == b){
+             	 return i;
+             }
+    	}
+    	return -1;
+    }
+    
+    public int val(Comparable a){
+    	if (b instanceof Rational){
+             return num;
+    	}
+    	return _decNum;
+    	}
+    }
+    
+    public boolean isSorted(){
+    	for (int a = 1; a < this.length; a++){
+              if (val(this._data[a]) < val(this._data[a-1])){
+              	   return false;
+              }
+    	}
+    	return true;
+    }
 
     //main method for testing
     public static void main( String[] args ) 
