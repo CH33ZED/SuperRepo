@@ -3,7 +3,7 @@ public class SuperArray implements ListInt {
  
     //~~~~~INSTANCE VARS~~~~~
     //underlying container, or "core" of this data structure:
-    private int[] _data;
+    private Comparable[] _data;
 
     //position of last meaningful value
     private int _lastPos;
@@ -16,7 +16,7 @@ public class SuperArray implements ListInt {
     //default constructor â€“ initializes 10-item array
     public SuperArray() 
     { 
-	_data = new int[10];
+	_data = new Comparable[10];
 	_lastPos = -1; //flag to indicate no lastpos yet
 	_size = 0;	
     }
@@ -41,7 +41,7 @@ public class SuperArray implements ListInt {
     //double capacity of this SuperArray
     private void expand() 
     { 
-	int[] temp = new int[ _data.length * 2 ];
+	Comparable[] temp = new Comparable[ _data.length * 2 ];
 	for( int i = 0; i < _data.length; i++ )
 	    temp[i] = _data[i];
 	_data = temp;
@@ -49,14 +49,14 @@ public class SuperArray implements ListInt {
 
 		
     //accessor -- return value at specified index
-    public int get( int index ) { return _data[index]; }
+    public Comparable get( int index ) { return _data[index]; }
 
 		
     //mutator -- set value at index to newVal, 
     //           return old value at index
-    public int set( int index, int newVal ) 
+    public Comparable set( int index, Comparable newVal ) 
     { 
- 	int temp = _data[index];
+ 	Comparable temp = _data[index];
 	_data[index] = newVal;
 	return temp;
     }
@@ -70,11 +70,11 @@ public class SuperArray implements ListInt {
 
     //inserts an item at index
     //shifts existing elements to the right
-    public void add (int loc, int x) {
+    public void add (int loc, Comparable x) {
 	if (loc > _size) System.out.println("Invalid command.");
 	else {
 	    if (_size + 1 > _data.length) expand();
-	    int temp = x;
+	    Comparable temp = x;
 	    for (int i = loc; i < _size + 1; i++ ){
 		temp = set(i, temp);
 		//stores the old value in temp, while setting that spot to what temp was, which is the value of the i-1 index
