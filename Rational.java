@@ -15,6 +15,10 @@ public class Rational implements Comparable{
 	den = 1;
     }
     
+    public int getNum(){
+    	return num;
+    }
+    
     //overloaded constructor
     public Rational (int x, int y) {
 	this();
