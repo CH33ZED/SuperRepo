@@ -153,12 +153,18 @@ public class Binary {
       Object), or if this and other represent equal binary values
       =============================================*/
     public boolean equals( Object other ) { 
+      try{
         boolean a = this == other;
         if (!a)
             a = other instanceof Binary 
             && this._decNum == ((Binary)other)._decNum 
             && this._binNum.equals(((Binary)other)._binNum);
         return a;
+      }
+      catch(Exception e){
+      	if(!(other instanceof Binary))
+      	    throw new classCastException("\n Wrong class type! input not a Binary")
+      }
 	/****** YOUR IMPLEMENTATION HURRR ******/   
     }
 
@@ -170,13 +176,19 @@ public class Binary {
       negative integer if this<input, positive integer otherwise
       =============================================*/
     public int compareTo( Object other ) {
+       try{
         if (this._decNum < ((Binary)other)._decNum){
 	    return -1;
         }
         if (this._decNum == ((Binary)other)._decNum){
 	    return 0;
         }
-        return 1;
+        return 1; 
+       }
+      catch(Exception e){
+      	if(!(other instanceof Binary))
+      	    throw new classCastException("\n Wrong class type! input not a Binary")
+      }
 	/****** YOUR IMPLEMENTATION HURRR ******/   
     }
 
