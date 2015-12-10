@@ -23,6 +23,9 @@ public class Binary implements Comparable{
 	/****** YOUR IMPLEMENTATION HURRR ******/   
     }
 
+    public int getNum(){
+    	return _decNum;
+    }
 
     /*=====================================
       overloaded constructor
