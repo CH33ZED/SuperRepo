@@ -165,7 +165,14 @@ public class Binary implements Comparable{
 	/****** YOUR IMPLEMENTATION HURRR ******/   
     }
 
-
+     public int val(Comparable a){
+    	if (b instanceof Rational){
+             return num;
+    	}
+    	return _decNum;
+    	}
+    }
+    
     /*=============================================
       int compareTo(Object) -- tells which of two Binary objects is greater
       pre:  other is instance of class Binary
@@ -174,10 +181,10 @@ public class Binary implements Comparable{
       =============================================*/
     public int compareTo( Object other ) {
        try{
-        if (this._decNum < ((Binary)other)._decNum){
+        if (this._decNum < val((Comparable)other)){
 	    return -1;
         }
-        if (this._decNum == ((Binary)other)._decNum){
+        if (this._decNum == val((Comparable)other)){
 	    return 0;
         }
         return 1; 
