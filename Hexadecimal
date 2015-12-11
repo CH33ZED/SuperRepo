@@ -114,6 +114,13 @@ public class Hexadecimal implements Comparable{
 	/****** YOUR IMPLEMENTATION HURRR ******/   
     }
 
+    public int val(Comparable a){
+    	if (b instanceof Rational){
+             return num;
+    	}
+    	return _decNum;
+    	}
+    }
 
     /*=============================================
       int compareTo(Object) -- tells which of two Binary objects is greater
@@ -123,10 +130,10 @@ public class Hexadecimal implements Comparable{
       =============================================*/
     public int compareTo( Object other ) {
       try{
-        if (this._decNum < ((Hexadecimal)other)._decNum){
+        if (this._decNum < val((Comparable)other)){
 	    return -1;
         }
-        if (this._decNum == ((Hexadecimal)other)._decNum){
+        if (this._decNum == val(Comparablel)other)){
 	    return 0;
         }
         return 1;
