@@ -88,6 +88,14 @@ public class Rational implements Comparable{
 	den *= y;
     }
     
+    public int val(Comparable a){
+    	if (b instanceof Rational){
+             return num;
+    	}
+    	return _decNum;
+    	}
+    }
+    
     //re: add() and subract()
     /* by multiplying the num and den of one factor by the den/gcd of 
        the other we are essentially finding the lcm of both denominators */
@@ -96,8 +104,8 @@ public class Rational implements Comparable{
       try{
 	this.reduce();
 	og.reduce();
-	if (this.num==og.num&& this.den == ((Rational)og).den) return 0;
-	if (this.num > og.num && this.den< ((Rational)og).den )  return 1;
+	if (this.num== val((Comparable)og)) && this.den == ((Rational)og).den) return 0;
+	if (this.num > val((Comparable)og)) && this.den< ((Rational)og).den )  return 1;
 	return -1;
       }
       catch(Exception e){
