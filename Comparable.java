@@ -1,4 +1,5 @@
 public interface Comparable {
-    int compareTo(Rational og);
-    int getNum(){
+    public int compareTo(Rational og);
+    public int getNum();
+    public int val(Comparable a);
 }
