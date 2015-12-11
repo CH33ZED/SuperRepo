@@ -104,8 +104,8 @@ public class Rational implements Comparable{
       try{
 	this.reduce();
 	og.reduce();
-	if (this.num== val((Comparable)og)) && this.den == ((Rational)og).den) return 0;
-	if (this.num > val((Comparable)og)) && this.den< ((Rational)og).den )  return 1;
+	if (this.num * this.den == val(og)) return 0;
+	if (this.num * this.den > val(og))  return 1;
 	return -1;
       }
       catch(Exception e){
